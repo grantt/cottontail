@@ -9,10 +9,10 @@ EXCHANGE_HEADERS = u'headers'
 EXCHANGE_TYPES = {EXCHANGE_DIRECT, EXCHANGE_TOPIC, EXCHANGE_FANOUT, EXCHANGE_HEADERS}
 
 
-class CottontailClient(object):
+class CottontailMessenger(object):
     """
-    A client for implementing messaging patterns using the RabbitMQ library.
-    Supported patterns include pub/sub, RPC, and work queues.
+    A service for implementing messaging patterns using the RabbitMQ library.
+    Supported patterns include pub/sub, RPC, topic subscription, and work queues.
 
     Args:
         exchange_name (str): Name of the message exchange to create

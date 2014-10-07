@@ -3,7 +3,7 @@ import cottontail
 
 
 def run(topic):
-    test_cli = cottontail.CottontailClient('test_topic', exchange_type=cottontail.EXCHANGE_TOPIC)
+    test_cli = cottontail.CottontailMessenger('test_topic', exchange_type=cottontail.EXCHANGE_TOPIC)
 
     test_cli.subscribe(topic)
     test_cli.listen()

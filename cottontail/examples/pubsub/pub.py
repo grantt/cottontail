@@ -2,7 +2,7 @@ import cottontail
 
 
 def run():
-    test_cli = cottontail.CottontailClient('test')
+    test_cli = cottontail.CottontailMessenger('test')
 
     for n in xrange(100):
         if n % 2:
