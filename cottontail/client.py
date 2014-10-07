@@ -9,7 +9,7 @@ EXCHANGE_HEADERS = u'headers'
 EXCHANGE_TYPES = {EXCHANGE_DIRECT, EXCHANGE_TOPIC, EXCHANGE_FANOUT, EXCHANGE_HEADERS}
 
 
-class CottontailExchange(object):
+class CottontailClient(object):
     """
     A client for implementing messaging patterns using the RabbitMQ library.
     Supported patterns include pub/sub, RPC, and work queues.
@@ -70,18 +70,19 @@ class CottontailExchange(object):
 
         # Format the message as a : separated string
         message = "{}:{}".format(topic, content)
+        self.logger.info('Sending message :{}:{}'.format(topic, content))
         self._channel.basic_publish(
             exchange=self.exchange,
             routing_key=topic,
             body=message
         )
 
-    def subscribe(self, topic, acknowledge=True):
+    def subscribe(self, topic='', acknowledge=True):
         """
         Subscribe to the messages of a particular topic
 
         Args:
-            topic (basestring): The name of the topic to subscribe to.
+            topic (basestring, optional): The name of the topic to subscribe to, defaults to '' (all messages).
             acknowledge (bool, optional): Whether to send an 'ack' message back to the
                 producer upon message receipt, default is True.
 
@@ -100,17 +101,17 @@ class CottontailExchange(object):
 
         self._channel.queue_bind(exchange=self.exchange, queue=queue_name, routing_key=topic)
 
-        self._channel.basic_consume(self.on_message, queue=queue_name, no_ack=not acknowledge)
         self.logger.info('Subscribing to topic: {}'.format(topic))
+        self._channel.basic_consume(self.on_message, queue=queue_name, no_ack=not acknowledge)
 
         return True
 
-    def unsubscribe(self, topic):
+    def unsubscribe(self, topic=''):
         """
         Unsubscribe to the messages of a particular topic
 
         Args:
-            topic (basestring): The name of the topic to subscribe to
+            topic (basestring, optional): The name of the topic to subscribe to, defaults to '' (all messages).
 
         Returns:
             bool: True if successful
@@ -132,11 +133,12 @@ class CottontailExchange(object):
         """
         Listen continuously on the subscriber socket for incoming messages.
         """
-        self._channel.start_consuming()
         self.logger.info('Listening for messages...')
+        self._channel.start_consuming()
 
     def acknowledge(self, message_receipt):
-        """Acknowledge the message delivery from RabbitMQ by sending a Basic.Ack RPC method for the delivery tag.
+        """
+        Acknowledge the message delivery from RabbitMQ by sending a Basic.Ack RPC method for the delivery tag.
 
         Args:
             message_receipt (int): The delivery tag from the Basic.Deliver frame
@@ -168,5 +170,6 @@ class CottontailExchange(object):
         Returns:
             object: The Python object representing the message received
         """
+        print "Handling message {}:{}".format(basic_deliver.routing_key, body)
         self.logger.info("Handling message {}:{}".format(basic_deliver.routing_key, body))
         self.acknowledge(basic_deliver.delivery_tag)
