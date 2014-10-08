@@ -95,77 +95,143 @@
 <span id="cottontail-base-module"></span><h2>cottontail.base module<a class="headerlink" href="#module-cottontail.base" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="cottontail.base.CottontailBase">
-<em class="property">class </em><tt class="descclassname">cottontail.base.</tt><tt class="descname">CottontailBase</tt><big>(</big><em>exchange_name=''</em>, <em>hostname='localhost'</em>, <em>port=5672</em>, <em>logger=&lt;logging.Logger object at 0x105ba24d0&gt;</em><big>)</big><a class="reference internal" href="_modules/cottontail/base.html#CottontailBase"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cottontail.base.CottontailBase" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">cottontail.base.</tt><tt class="descname">CottontailBase</tt><big>(</big><em>exchange_name=''</em>, <em>hostname='localhost'</em>, <em>port=5672</em>, <em>logger=&lt;logging.Logger object at 0x104d46110&gt;</em><big>)</big><a class="reference internal" href="_modules/cottontail/base.html#CottontailBase"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cottontail.base.CottontailBase" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="http://docs.python.org/library/functions.html#object" title="(in Python v2.7)"><tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></a></p>
 <p>A service base class for implementing messaging patterns using the RabbitMQ library.
 Supported patterns include pub/sub, RPC, topic subscription, and work queues.</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>exchange_name (str, optional): Name of the message exchange to create, defaults to &#8216;&#8217;.
-hostname (str, optional): Hostname for this pub/sub client, defaults to &#8216;localhost&#8217;.
-port (int, optional): Numeric port for this pub/sub client, defaults to &#8216;5672&#8217;.
-exchange_type (str, optional): Exchange type to create (&#8216;headers&#8217;, &#8216;topic&#8217;, &#8216;direct&#8217;, &#8216;fanout&#8217;), defaults to &#8216;direct&#8217;.
-confirm_delivery (bool, optional): Whether to request &#8216;ack&#8217; messages from consumers, default is True.
-logger (module, optional): The logging module to use with this Client instance, default is &#8216;utils.logger&#8217;.</dd>
-<dt>Attributes:</dt>
-<dd>logger (module): The logging module to use with this Client instance.
-exchange_name (string): Exchange name to create, default &#8216;&#8217;, the default exchange.
-exchange_type (string): Exchange type to create (&#8216;headers&#8217;, &#8216;topic&#8217;, &#8216;direct&#8217;, or &#8216;fanout&#8217;), default &#8216;direct&#8217;.
-exchange (tuple): The exchange name and type represented as a tuple.</dd>
-<dt>Raises:</dt>
-<dd>CottontailError: If exchange_type is not in the valid EXCHANGE_TYPES.</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>exchange_name</strong> (<em>str, optional</em>) &#8211; Name of the message exchange to create, defaults to &#8216;&#8217;.</li>
+<li><strong>hostname</strong> (<em>str, optional</em>) &#8211; Hostname for this pub/sub client, defaults to &#8216;localhost&#8217;.</li>
+<li><strong>port</strong> (<em>int, optional</em>) &#8211; Numeric port for this pub/sub client, defaults to &#8216;5672&#8217;.</li>
+<li><strong>exchange_type</strong> (<em>str, optional</em>) &#8211; Exchange type to create (&#8216;headers&#8217;, &#8216;topic&#8217;, &#8216;direct&#8217;, &#8216;fanout&#8217;), defaults to &#8216;direct&#8217;.</li>
+<li><strong>confirm_delivery</strong> (<em>bool, optional</em>) &#8211; Whether to request &#8216;ack&#8217; messages from consumers, default is True.</li>
+<li><strong>logger</strong> (<em>module, optional</em>) &#8211; The logging module to use with this Client instance, default is &#8216;utils.logger&#8217;.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="cottontail.base.CottontailBase.logger">
+<tt class="descname">logger</tt><a class="headerlink" href="#cottontail.base.CottontailBase.logger" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>module</em></p>
+<p>The logging module to use with this Client instance.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cottontail.base.CottontailBase.exchange_name">
+<tt class="descname">exchange_name</tt><a class="headerlink" href="#cottontail.base.CottontailBase.exchange_name" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>string</em></p>
+<p>Exchange name to create, default &#8216;&#8217;, the default exchange.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cottontail.base.CottontailBase.exchange_type">
+<tt class="descname">exchange_type</tt><a class="headerlink" href="#cottontail.base.CottontailBase.exchange_type" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>string</em></p>
+<p>Exchange type to create (&#8216;headers&#8217;, &#8216;topic&#8217;, &#8216;direct&#8217;, or &#8216;fanout&#8217;), default &#8216;direct&#8217;.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cottontail.base.CottontailBase.exchange">
+<tt class="descname">exchange</tt><a class="headerlink" href="#cottontail.base.CottontailBase.exchange" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>tuple</em></p>
+<p>The exchange name and type represented as a tuple.</p>
+</dd></dl>
+
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><tt class="xref py py-exc docutils literal"><span class="pre">CottontailError</span></tt> &#8211; 
+If exchange_type is not in the valid EXCHANGE_TYPES.</td>
+</tr>
+</tbody>
+</table>
 <dl class="method">
 <dt id="cottontail.base.CottontailBase.acknowledge">
 <tt class="descname">acknowledge</tt><big>(</big><em>message_receipt</em><big>)</big><a class="reference internal" href="_modules/cottontail/base.html#CottontailBase.acknowledge"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cottontail.base.CottontailBase.acknowledge" title="Permalink to this definition">¶</a></dt>
 <dd><p>Acknowledge the message delivery from RabbitMQ by sending a Basic.Ack RPC method for the delivery tag.</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>message_receipt (int): The delivery tag from the Basic.Deliver frame</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>message_receipt</strong> (<a class="reference external" href="http://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; The delivery tag from the Basic.Deliver frame</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="cottontail.base.CottontailBase.close_connection">
 <tt class="descname">close_connection</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/cottontail/base.html#CottontailBase.close_connection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cottontail.base.CottontailBase.close_connection" title="Permalink to this definition">¶</a></dt>
 <dd><p>Closes the connection to RabbitMQ</p>
-<dl class="docutils">
-<dt>Returns:</dt>
-<dd>bool: True if successful</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if successful</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="cottontail.base.CottontailBase.declare_queue">
 <tt class="descname">declare_queue</tt><big>(</big><em>name</em>, <em>durable=True</em>, <em>exclusive=False</em><big>)</big><a class="reference internal" href="_modules/cottontail/base.html#CottontailBase.declare_queue"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cottontail.base.CottontailBase.declare_queue" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="docutils">
-<dt>Args:</dt>
-<dd><p class="first">name (string): Name of the queue to declare</p>
-<p class="last">durable (bool, optional): Survive reboots of the broker, defaults to True so we can increase reliability.
-exclusive (bool, optional): Only allow access by the current connection, defaults to True.</p>
-</dd>
-<dt>Returns:</dt>
-<dd>basestring: The name of the successfully declared queue</dd>
-</dl>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>name</strong> (<a class="reference external" href="http://docs.python.org/library/string.html#module-string" title="(in Python v2.7)"><em>string</em></a>) &#8211; Name of the queue to declare</li>
+<li><strong>durable</strong> (<em>bool, optional</em>) &#8211; Survive reboots of the broker, defaults to True so we can increase reliability.</li>
+<li><strong>exclusive</strong> (<em>bool, optional</em>) &#8211; Only allow access by the current connection, defaults to True.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The name of the successfully declared queue</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">basestring</p>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="cottontail.base.CottontailBase.delete_queue">
 <tt class="descname">delete_queue</tt><big>(</big><em>name</em><big>)</big><a class="reference internal" href="_modules/cottontail/base.html#CottontailBase.delete_queue"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cottontail.base.CottontailBase.delete_queue" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="docutils">
-<dt>Args:</dt>
-<dd>name (string): Name of the queue to delete
-if_unused (bool, optional): only delete if it&#8217;s unused
-if_empty (bool, optional): only delete if the queue is empty
-nowait (bool, optional): Do not wait for a Queue.DeleteOk</dd>
-<dt>Raises:</dt>
-<dd>TypeError: If &#8216;name&#8217; is not a string</dd>
-</dl>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>name</strong> (<a class="reference external" href="http://docs.python.org/library/string.html#module-string" title="(in Python v2.7)"><em>string</em></a>) &#8211; Name of the queue to delete</li>
+<li><strong>if_unused</strong> (<em>bool, optional</em>) &#8211; only delete if it&#8217;s unused</li>
+<li><strong>if_empty</strong> (<em>bool, optional</em>) &#8211; only delete if the queue is empty</li>
+<li><strong>nowait</strong> (<em>bool, optional</em>) &#8211; Do not wait for a Queue.DeleteOk</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><tt class="xref py py-exc docutils literal"><span class="pre">TypeError</span></tt> &#8211; 
+If &#8216;name&#8217; is not a string</p>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="attribute">
-<dt id="cottontail.base.CottontailBase.exchange_type">
-<tt class="descname">exchange_type</tt><em class="property"> = u'direct'</em><a class="headerlink" href="#cottontail.base.CottontailBase.exchange_type" title="Permalink to this definition">¶</a></dt>
+<dt>
+<tt class="descname">exchange_type</tt><em class="property"> = u'direct'</em></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -178,29 +244,51 @@ nowait (bool, optional): Do not wait for a Queue.DeleteOk</dd>
 <dt id="cottontail.base.CottontailBase.publish">
 <tt class="descname">publish</tt><big>(</big><em>topic</em>, <em>content</em><big>)</big><a class="reference internal" href="_modules/cottontail/base.html#CottontailBase.publish"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cottontail.base.CottontailBase.publish" title="Permalink to this definition">¶</a></dt>
 <dd><p>Publish a message with a specified topic to the exchange</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>topic (str): The topic of the message, to be read by subscribers of that topic.
-content (str): The contents of the message to be sent</dd>
-<dt>Raises:</dt>
-<dd>TypeError: If &#8216;content&#8217; is not a string</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>topic</strong> (<a class="reference external" href="http://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; The topic of the message, to be read by subscribers of that topic.</li>
+<li><strong>content</strong> (<a class="reference external" href="http://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; The contents of the message to be sent</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><tt class="xref py py-exc docutils literal"><span class="pre">TypeError</span></tt> &#8211; 
+If &#8216;content&#8217; is not a string</p>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="cottontail.base.CottontailBase.subscribe">
 <tt class="descname">subscribe</tt><big>(</big><em>queue_name=None</em>, <em>topic=None</em>, <em>acknowledge=True</em>, <em>exclusive=False</em><big>)</big><a class="reference internal" href="_modules/cottontail/base.html#CottontailBase.subscribe"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cottontail.base.CottontailBase.subscribe" title="Permalink to this definition">¶</a></dt>
 <dd><p>Subscribe to the messages of a particular queue</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>queue_name (basestring, optional): The name of the queue to subscribe to, defaults to None.
-topic (basestring, optional): The topic or key to filter messages by, defaults to None.
-acknowledge (bool, optional): Whether to send an &#8216;ack&#8217; message back to the producer upon message receipt, default is True.</dd>
-<dt>Returns:</dt>
-<dd>bool: True if successful</dd>
-<dt>Raises:</dt>
-<dd>CottontailError: If a subscription is issued to the default (&#8216;&#8217;) exchange. See <a class="reference external" href="http://docs.oasis-open.org/amqp/core/v1.0/amqp-core-complete-v1.0.pdf">http://docs.oasis-open.org/amqp/core/v1.0/amqp-core-complete-v1.0.pdf</a> for details.</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>queue_name</strong> (<em>basestring, optional</em>) &#8211; The name of the queue to subscribe to, defaults to None.</li>
+<li><strong>topic</strong> (<em>basestring, optional</em>) &#8211; The topic or key to filter messages by, defaults to None.</li>
+<li><strong>acknowledge</strong> (<em>bool, optional</em>) &#8211; Whether to send an &#8216;ack&#8217; message back to the producer upon message receipt, default is True.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">True if successful</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">bool</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><tt class="xref py py-exc docutils literal"><span class="pre">CottontailError</span></tt> &#8211; 
+If a subscription is issued to the default (&#8216;&#8217;) exchange. See <a class="reference external" href="http://docs.oasis-open.org/amqp/core/v1.0/amqp-core-complete-v1.0.pdf">http://docs.oasis-open.org/amqp/core/v1.0/amqp-core-complete-v1.0.pdf</a> for details.</p>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </dd></dl>
@@ -219,13 +307,20 @@ acknowledge (bool, optional): Whether to send an &#8216;ack&#8217; message back 
 <dl class="exception">
 <dt id="cottontail.errors.CottontailError">
 <em class="property">exception </em><tt class="descclassname">cottontail.errors.</tt><tt class="descname">CottontailError</tt><big>(</big><em>message</em>, <em>code</em><big>)</big><a class="reference internal" href="_modules/cottontail/errors.html#CottontailError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cottontail.errors.CottontailError" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#cottontail.errors.CottontailBaseError" title="cottontail.errors.CottontailBaseError"><tt class="xref py py-class docutils literal"><span class="pre">cottontail.errors.CottontailBaseError</span></tt></a></p>
+<dd><p>Bases: <a class="reference internal" href="index.html#cottontail.errors.CottontailBaseError" title="cottontail.errors.CottontailBaseError"><tt class="xref py py-class docutils literal"><span class="pre">cottontail.errors.CottontailBaseError</span></tt></a></p>
 <p>A generic error for the Cottontail client</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>message (str): Name of the error message to pass
-code (int): Numeric code of the error to display</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>message</strong> (<a class="reference external" href="http://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; Name of the error message to pass</li>
+<li><strong>code</strong> (<a class="reference external" href="http://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; Numeric code of the error to display</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </div>
@@ -233,8 +328,8 @@ code (int): Numeric code of the error to display</dd>
 <span id="cottontail-pubsub-module"></span><h2>cottontail.pubsub module<a class="headerlink" href="#module-cottontail.pubsub" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="cottontail.pubsub.PubSubBase">
-<em class="property">class </em><tt class="descclassname">cottontail.pubsub.</tt><tt class="descname">PubSubBase</tt><big>(</big><em>exchange_name=''</em>, <em>hostname='localhost'</em>, <em>port=5672</em>, <em>logger=&lt;logging.Logger object at 0x105ba24d0&gt;</em><big>)</big><a class="reference internal" href="_modules/cottontail/pubsub.html#PubSubBase"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cottontail.pubsub.PubSubBase" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#cottontail.base.CottontailBase" title="cottontail.base.CottontailBase"><tt class="xref py py-class docutils literal"><span class="pre">cottontail.base.CottontailBase</span></tt></a></p>
+<em class="property">class </em><tt class="descclassname">cottontail.pubsub.</tt><tt class="descname">PubSubBase</tt><big>(</big><em>exchange_name=''</em>, <em>hostname='localhost'</em>, <em>port=5672</em>, <em>logger=&lt;logging.Logger object at 0x104d46110&gt;</em><big>)</big><a class="reference internal" href="_modules/cottontail/pubsub.html#PubSubBase"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cottontail.pubsub.PubSubBase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="index.html#cottontail.base.CottontailBase" title="cottontail.base.CottontailBase"><tt class="xref py py-class docutils literal"><span class="pre">cottontail.base.CottontailBase</span></tt></a></p>
 <p>A service base class for implementing pub/sub messaging patterns using the RabbitMQ library.</p>
 <dl class="attribute">
 <dt id="cottontail.pubsub.PubSubBase.exchange_type">
@@ -245,8 +340,8 @@ code (int): Numeric code of the error to display</dd>
 
 <dl class="class">
 <dt id="cottontail.pubsub.Publisher">
-<em class="property">class </em><tt class="descclassname">cottontail.pubsub.</tt><tt class="descname">Publisher</tt><big>(</big><em>exchange_name=''</em>, <em>hostname='localhost'</em>, <em>port=5672</em>, <em>logger=&lt;logging.Logger object at 0x105ba24d0&gt;</em><big>)</big><a class="reference internal" href="_modules/cottontail/pubsub.html#Publisher"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cottontail.pubsub.Publisher" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#cottontail.pubsub.PubSubBase" title="cottontail.pubsub.PubSubBase"><tt class="xref py py-class docutils literal"><span class="pre">cottontail.pubsub.PubSubBase</span></tt></a></p>
+<em class="property">class </em><tt class="descclassname">cottontail.pubsub.</tt><tt class="descname">Publisher</tt><big>(</big><em>exchange_name=''</em>, <em>hostname='localhost'</em>, <em>port=5672</em>, <em>logger=&lt;logging.Logger object at 0x104d46110&gt;</em><big>)</big><a class="reference internal" href="_modules/cottontail/pubsub.html#Publisher"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cottontail.pubsub.Publisher" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="index.html#cottontail.pubsub.PubSubBase" title="cottontail.pubsub.PubSubBase"><tt class="xref py py-class docutils literal"><span class="pre">cottontail.pubsub.PubSubBase</span></tt></a></p>
 <p>A server class for publishing messages in a pub/sub pattern.</p>
 <dl class="docutils">
 <dt>Overwritten methods:</dt>
@@ -256,8 +351,8 @@ code (int): Numeric code of the error to display</dd>
 
 <dl class="class">
 <dt id="cottontail.pubsub.Subscriber">
-<em class="property">class </em><tt class="descclassname">cottontail.pubsub.</tt><tt class="descname">Subscriber</tt><big>(</big><em>exchange_name=''</em>, <em>hostname='localhost'</em>, <em>port=5672</em>, <em>logger=&lt;logging.Logger object at 0x105ba24d0&gt;</em><big>)</big><a class="reference internal" href="_modules/cottontail/pubsub.html#Subscriber"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cottontail.pubsub.Subscriber" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#cottontail.pubsub.PubSubBase" title="cottontail.pubsub.PubSubBase"><tt class="xref py py-class docutils literal"><span class="pre">cottontail.pubsub.PubSubBase</span></tt></a></p>
+<em class="property">class </em><tt class="descclassname">cottontail.pubsub.</tt><tt class="descname">Subscriber</tt><big>(</big><em>exchange_name=''</em>, <em>hostname='localhost'</em>, <em>port=5672</em>, <em>logger=&lt;logging.Logger object at 0x104d46110&gt;</em><big>)</big><a class="reference internal" href="_modules/cottontail/pubsub.html#Subscriber"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cottontail.pubsub.Subscriber" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="index.html#cottontail.pubsub.PubSubBase" title="cottontail.pubsub.PubSubBase"><tt class="xref py py-class docutils literal"><span class="pre">cottontail.pubsub.PubSubBase</span></tt></a></p>
 <p>A worker class for consuming messages in a pub/sub pattern.</p>
 </dd></dl>
 
@@ -266,8 +361,8 @@ code (int): Numeric code of the error to display</dd>
 <span id="cottontail-queue-module"></span><h2>cottontail.queue module<a class="headerlink" href="#module-cottontail.queue" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="cottontail.queue.QueueBase">
-<em class="property">class </em><tt class="descclassname">cottontail.queue.</tt><tt class="descname">QueueBase</tt><big>(</big><em>exchange_name=''</em>, <em>hostname='localhost'</em>, <em>port=5672</em>, <em>logger=&lt;logging.Logger object at 0x105ba24d0&gt;</em><big>)</big><a class="reference internal" href="_modules/cottontail/queue.html#QueueBase"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cottontail.queue.QueueBase" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#cottontail.base.CottontailBase" title="cottontail.base.CottontailBase"><tt class="xref py py-class docutils literal"><span class="pre">cottontail.base.CottontailBase</span></tt></a></p>
+<em class="property">class </em><tt class="descclassname">cottontail.queue.</tt><tt class="descname">QueueBase</tt><big>(</big><em>exchange_name=''</em>, <em>hostname='localhost'</em>, <em>port=5672</em>, <em>logger=&lt;logging.Logger object at 0x104d46110&gt;</em><big>)</big><a class="reference internal" href="_modules/cottontail/queue.html#QueueBase"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cottontail.queue.QueueBase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="index.html#cottontail.base.CottontailBase" title="cottontail.base.CottontailBase"><tt class="xref py py-class docutils literal"><span class="pre">cottontail.base.CottontailBase</span></tt></a></p>
 <p>A service base class for implementing work queue messaging patterns using the RabbitMQ library.</p>
 <dl class="attribute">
 <dt id="cottontail.queue.QueueBase.exchange_type">
@@ -278,15 +373,15 @@ code (int): Numeric code of the error to display</dd>
 
 <dl class="class">
 <dt id="cottontail.queue.QueueServer">
-<em class="property">class </em><tt class="descclassname">cottontail.queue.</tt><tt class="descname">QueueServer</tt><big>(</big><em>exchange_name=''</em>, <em>hostname='localhost'</em>, <em>port=5672</em>, <em>logger=&lt;logging.Logger object at 0x105ba24d0&gt;</em><big>)</big><a class="reference internal" href="_modules/cottontail/queue.html#QueueServer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cottontail.queue.QueueServer" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#cottontail.queue.QueueBase" title="cottontail.queue.QueueBase"><tt class="xref py py-class docutils literal"><span class="pre">cottontail.queue.QueueBase</span></tt></a></p>
+<em class="property">class </em><tt class="descclassname">cottontail.queue.</tt><tt class="descname">QueueServer</tt><big>(</big><em>exchange_name=''</em>, <em>hostname='localhost'</em>, <em>port=5672</em>, <em>logger=&lt;logging.Logger object at 0x104d46110&gt;</em><big>)</big><a class="reference internal" href="_modules/cottontail/queue.html#QueueServer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cottontail.queue.QueueServer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="index.html#cottontail.queue.QueueBase" title="cottontail.queue.QueueBase"><tt class="xref py py-class docutils literal"><span class="pre">cottontail.queue.QueueBase</span></tt></a></p>
 <p>A server class for publishing messages to a queue.</p>
 </dd></dl>
 
 <dl class="class">
 <dt id="cottontail.queue.QueueWorker">
-<em class="property">class </em><tt class="descclassname">cottontail.queue.</tt><tt class="descname">QueueWorker</tt><big>(</big><em>exchange_name=''</em>, <em>hostname='localhost'</em>, <em>port=5672</em>, <em>logger=&lt;logging.Logger object at 0x105ba24d0&gt;</em><big>)</big><a class="reference internal" href="_modules/cottontail/queue.html#QueueWorker"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cottontail.queue.QueueWorker" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#cottontail.queue.QueueBase" title="cottontail.queue.QueueBase"><tt class="xref py py-class docutils literal"><span class="pre">cottontail.queue.QueueBase</span></tt></a></p>
+<em class="property">class </em><tt class="descclassname">cottontail.queue.</tt><tt class="descname">QueueWorker</tt><big>(</big><em>exchange_name=''</em>, <em>hostname='localhost'</em>, <em>port=5672</em>, <em>logger=&lt;logging.Logger object at 0x104d46110&gt;</em><big>)</big><a class="reference internal" href="_modules/cottontail/queue.html#QueueWorker"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cottontail.queue.QueueWorker" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="index.html#cottontail.queue.QueueBase" title="cottontail.queue.QueueBase"><tt class="xref py py-class docutils literal"><span class="pre">cottontail.queue.QueueBase</span></tt></a></p>
 <p>A worker class for consuming messages in a queue.</p>
 <dl class="docutils">
 <dt>Overwritten methods:</dt>
@@ -299,15 +394,15 @@ code (int): Numeric code of the error to display</dd>
 <span id="cottontail-rpc-module"></span><h2>cottontail.rpc module<a class="headerlink" href="#module-cottontail.rpc" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="cottontail.rpc.RPCBase">
-<em class="property">class </em><tt class="descclassname">cottontail.rpc.</tt><tt class="descname">RPCBase</tt><big>(</big><em>exchange_name=''</em>, <em>hostname='localhost'</em>, <em>port=5672</em>, <em>logger=&lt;logging.Logger object at 0x105ba24d0&gt;</em><big>)</big><a class="reference internal" href="_modules/cottontail/rpc.html#RPCBase"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cottontail.rpc.RPCBase" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#cottontail.base.CottontailBase" title="cottontail.base.CottontailBase"><tt class="xref py py-class docutils literal"><span class="pre">cottontail.base.CottontailBase</span></tt></a></p>
+<em class="property">class </em><tt class="descclassname">cottontail.rpc.</tt><tt class="descname">RPCBase</tt><big>(</big><em>exchange_name=''</em>, <em>hostname='localhost'</em>, <em>port=5672</em>, <em>logger=&lt;logging.Logger object at 0x104d46110&gt;</em><big>)</big><a class="reference internal" href="_modules/cottontail/rpc.html#RPCBase"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cottontail.rpc.RPCBase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="index.html#cottontail.base.CottontailBase" title="cottontail.base.CottontailBase"><tt class="xref py py-class docutils literal"><span class="pre">cottontail.base.CottontailBase</span></tt></a></p>
 <p>A service base class for implementing RPC messaging patterns using the RabbitMQ library.</p>
 </dd></dl>
 
 <dl class="class">
 <dt id="cottontail.rpc.RPCClient">
 <em class="property">class </em><tt class="descclassname">cottontail.rpc.</tt><tt class="descname">RPCClient</tt><big>(</big><em>**kw</em><big>)</big><a class="reference internal" href="_modules/cottontail/rpc.html#RPCClient"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cottontail.rpc.RPCClient" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#cottontail.rpc.RPCBase" title="cottontail.rpc.RPCBase"><tt class="xref py py-class docutils literal"><span class="pre">cottontail.rpc.RPCBase</span></tt></a></p>
+<dd><p>Bases: <a class="reference internal" href="index.html#cottontail.rpc.RPCBase" title="cottontail.rpc.RPCBase"><tt class="xref py py-class docutils literal"><span class="pre">cottontail.rpc.RPCBase</span></tt></a></p>
 <p>A client class for submitting RPC requests.</p>
 <dl class="docutils">
 <dt>Overridden methods:</dt>
@@ -318,9 +413,14 @@ _declare_exchange:</dd>
 <dt>Additional methods</dt>
 <dd>call:
 _compose_message</dd>
-<dt>Attributes:</dt>
-<dd>callback_queue (string): Name of the callback queue</dd>
 </dl>
+<dl class="attribute">
+<dt id="cottontail.rpc.RPCClient.callback_queue">
+<tt class="descname">callback_queue</tt><a class="headerlink" href="#cottontail.rpc.RPCClient.callback_queue" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>string</em></p>
+<p>Name of the callback queue</p>
+</dd></dl>
+
 <dl class="method">
 <dt id="cottontail.rpc.RPCClient.call">
 <tt class="descname">call</tt><big>(</big><em>function</em>, <em>*fn_args</em>, <em>**fn_kwargs</em><big>)</big><a class="reference internal" href="_modules/cottontail/rpc.html#RPCClient.call"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cottontail.rpc.RPCClient.call" title="Permalink to this definition">¶</a></dt>
@@ -330,8 +430,8 @@ _compose_message</dd>
 
 <dl class="class">
 <dt id="cottontail.rpc.RPCServer">
-<em class="property">class </em><tt class="descclassname">cottontail.rpc.</tt><tt class="descname">RPCServer</tt><big>(</big><em>exchange_name=''</em>, <em>hostname='localhost'</em>, <em>port=5672</em>, <em>logger=&lt;logging.Logger object at 0x105ba24d0&gt;</em><big>)</big><a class="reference internal" href="_modules/cottontail/rpc.html#RPCServer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cottontail.rpc.RPCServer" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#cottontail.rpc.RPCBase" title="cottontail.rpc.RPCBase"><tt class="xref py py-class docutils literal"><span class="pre">cottontail.rpc.RPCBase</span></tt></a></p>
+<em class="property">class </em><tt class="descclassname">cottontail.rpc.</tt><tt class="descname">RPCServer</tt><big>(</big><em>exchange_name=''</em>, <em>hostname='localhost'</em>, <em>port=5672</em>, <em>logger=&lt;logging.Logger object at 0x104d46110&gt;</em><big>)</big><a class="reference internal" href="_modules/cottontail/rpc.html#RPCServer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cottontail.rpc.RPCServer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="index.html#cottontail.rpc.RPCBase" title="cottontail.rpc.RPCBase"><tt class="xref py py-class docutils literal"><span class="pre">cottontail.rpc.RPCBase</span></tt></a></p>
 <p>A server class for handling RPC requests.</p>
 <dl class="docutils">
 <dt>Overwritten methods:</dt>
@@ -348,8 +448,8 @@ _execute_call:</dd>
 <span id="cottontail-topic-module"></span><h2>cottontail.topic module<a class="headerlink" href="#module-cottontail.topic" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="cottontail.topic.TopicBase">
-<em class="property">class </em><tt class="descclassname">cottontail.topic.</tt><tt class="descname">TopicBase</tt><big>(</big><em>exchange_name=''</em>, <em>hostname='localhost'</em>, <em>port=5672</em>, <em>logger=&lt;logging.Logger object at 0x105ba24d0&gt;</em><big>)</big><a class="reference internal" href="_modules/cottontail/topic.html#TopicBase"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cottontail.topic.TopicBase" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#cottontail.base.CottontailBase" title="cottontail.base.CottontailBase"><tt class="xref py py-class docutils literal"><span class="pre">cottontail.base.CottontailBase</span></tt></a></p>
+<em class="property">class </em><tt class="descclassname">cottontail.topic.</tt><tt class="descname">TopicBase</tt><big>(</big><em>exchange_name=''</em>, <em>hostname='localhost'</em>, <em>port=5672</em>, <em>logger=&lt;logging.Logger object at 0x104d46110&gt;</em><big>)</big><a class="reference internal" href="_modules/cottontail/topic.html#TopicBase"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cottontail.topic.TopicBase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="index.html#cottontail.base.CottontailBase" title="cottontail.base.CottontailBase"><tt class="xref py py-class docutils literal"><span class="pre">cottontail.base.CottontailBase</span></tt></a></p>
 <p>A service base class for implementing work queue messaging patterns using the RabbitMQ library.</p>
 <dl class="attribute">
 <dt id="cottontail.topic.TopicBase.exchange_type">
@@ -360,8 +460,8 @@ _execute_call:</dd>
 
 <dl class="class">
 <dt id="cottontail.topic.TopicPublisher">
-<em class="property">class </em><tt class="descclassname">cottontail.topic.</tt><tt class="descname">TopicPublisher</tt><big>(</big><em>exchange_name=''</em>, <em>hostname='localhost'</em>, <em>port=5672</em>, <em>logger=&lt;logging.Logger object at 0x105ba24d0&gt;</em><big>)</big><a class="reference internal" href="_modules/cottontail/topic.html#TopicPublisher"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cottontail.topic.TopicPublisher" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#cottontail.topic.TopicBase" title="cottontail.topic.TopicBase"><tt class="xref py py-class docutils literal"><span class="pre">cottontail.topic.TopicBase</span></tt></a></p>
+<em class="property">class </em><tt class="descclassname">cottontail.topic.</tt><tt class="descname">TopicPublisher</tt><big>(</big><em>exchange_name=''</em>, <em>hostname='localhost'</em>, <em>port=5672</em>, <em>logger=&lt;logging.Logger object at 0x104d46110&gt;</em><big>)</big><a class="reference internal" href="_modules/cottontail/topic.html#TopicPublisher"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cottontail.topic.TopicPublisher" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="index.html#cottontail.topic.TopicBase" title="cottontail.topic.TopicBase"><tt class="xref py py-class docutils literal"><span class="pre">cottontail.topic.TopicBase</span></tt></a></p>
 <p>A server class for publishing messages in a pub/sub pattern.</p>
 <dl class="docutils">
 <dt>Overwritten methods:</dt>
@@ -371,8 +471,8 @@ _execute_call:</dd>
 
 <dl class="class">
 <dt id="cottontail.topic.TopicSubscriber">
-<em class="property">class </em><tt class="descclassname">cottontail.topic.</tt><tt class="descname">TopicSubscriber</tt><big>(</big><em>exchange_name=''</em>, <em>hostname='localhost'</em>, <em>port=5672</em>, <em>logger=&lt;logging.Logger object at 0x105ba24d0&gt;</em><big>)</big><a class="reference internal" href="_modules/cottontail/topic.html#TopicSubscriber"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cottontail.topic.TopicSubscriber" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#cottontail.topic.TopicBase" title="cottontail.topic.TopicBase"><tt class="xref py py-class docutils literal"><span class="pre">cottontail.topic.TopicBase</span></tt></a></p>
+<em class="property">class </em><tt class="descclassname">cottontail.topic.</tt><tt class="descname">TopicSubscriber</tt><big>(</big><em>exchange_name=''</em>, <em>hostname='localhost'</em>, <em>port=5672</em>, <em>logger=&lt;logging.Logger object at 0x104d46110&gt;</em><big>)</big><a class="reference internal" href="_modules/cottontail/topic.html#TopicSubscriber"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cottontail.topic.TopicSubscriber" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="index.html#cottontail.topic.TopicBase" title="cottontail.topic.TopicBase"><tt class="xref py py-class docutils literal"><span class="pre">cottontail.topic.TopicBase</span></tt></a></p>
 <p>A worker class for consuming messages of a particular topic in a pub/sub pattern.</p>
 </dd></dl>
 

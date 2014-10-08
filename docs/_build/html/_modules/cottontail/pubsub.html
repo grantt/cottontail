@@ -50,14 +50,14 @@
 <span class="kn">from</span> <span class="nn">base</span> <span class="kn">import</span> <span class="n">CottontailBase</span><span class="p">,</span> <span class="n">EXCHANGE_FANOUT</span>
 
 
-<div class="viewcode-block" id="PubSubBase"><a class="viewcode-back" href="../../cottontail.html#cottontail.pubsub.PubSubBase">[docs]</a><span class="k">class</span> <span class="nc">PubSubBase</span><span class="p">(</span><span class="n">CottontailBase</span><span class="p">):</span>
+<div class="viewcode-block" id="PubSubBase"><a class="viewcode-back" href="../../index.html#cottontail.pubsub.PubSubBase">[docs]</a><span class="k">class</span> <span class="nc">PubSubBase</span><span class="p">(</span><span class="n">CottontailBase</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A service base class for implementing pub/sub messaging patterns using the RabbitMQ library.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">exchange_type</span> <span class="o">=</span> <span class="n">EXCHANGE_FANOUT</span>
 
 </div>
-<div class="viewcode-block" id="Publisher"><a class="viewcode-back" href="../../cottontail.html#cottontail.pubsub.Publisher">[docs]</a><span class="k">class</span> <span class="nc">Publisher</span><span class="p">(</span><span class="n">PubSubBase</span><span class="p">):</span>
+<div class="viewcode-block" id="Publisher"><a class="viewcode-back" href="../../index.html#cottontail.pubsub.Publisher">[docs]</a><span class="k">class</span> <span class="nc">Publisher</span><span class="p">(</span><span class="n">PubSubBase</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A server class for publishing messages in a pub/sub pattern.</span>
 
@@ -69,7 +69,7 @@
         <span class="k">pass</span>
 
 </div>
-<div class="viewcode-block" id="Subscriber"><a class="viewcode-back" href="../../cottontail.html#cottontail.pubsub.Subscriber">[docs]</a><span class="k">class</span> <span class="nc">Subscriber</span><span class="p">(</span><span class="n">PubSubBase</span><span class="p">):</span>
+<div class="viewcode-block" id="Subscriber"><a class="viewcode-back" href="../../index.html#cottontail.pubsub.Subscriber">[docs]</a><span class="k">class</span> <span class="nc">Subscriber</span><span class="p">(</span><span class="n">PubSubBase</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A worker class for consuming messages in a pub/sub pattern.</span>
 
