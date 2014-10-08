@@ -11,12 +11,12 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
-.. automodule:: base
+.. automodule:: cottontail.base
 
 .. autoclass:: CottontailBase
     :members:
 
-.. automodule:: errors
+.. automodule:: cottontail.errors
 
 .. autoclass:: CottontailBaseError
     :members:
@@ -24,7 +24,7 @@ Contents:
 .. autoclass:: CottontailError
     :members:
 
-.. automodule:: queue
+.. automodule:: cottontail.queue
 
 .. autoclass:: QueueBase
     :members:
@@ -35,7 +35,7 @@ Contents:
 .. autoclass:: QueueWorker
     :members:
 
-.. automodule:: pubsub
+.. automodule:: cottontail.pubsub
 
 .. autoclass:: PubSubBase
     :members:
@@ -46,7 +46,7 @@ Contents:
 .. autoclass:: Subscriber
     :members:
 
-.. automodule:: topic
+.. automodule:: cottontail.topic
 
 .. autoclass:: TopicBase
     :members:
@@ -57,7 +57,7 @@ Contents:
 .. autoclass:: TopicSubscriber
     :members:
 
-.. automodule:: rpc
+.. automodule:: cottontail.rpc
 
 .. autoclass:: RPCBase
     :members:
