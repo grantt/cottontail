@@ -11,6 +11,62 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
+.. automodule:: base
+
+.. autoclass:: SomeClassName
+    :members:
+
+.. automodule:: errors
+
+.. autoclass:: CottontailBaseError
+    :members:
+
+.. autoclass:: CottontailError
+    :members:
+
+.. automodule:: queue
+
+.. autoclass:: QueueBase
+    :members:
+
+.. autoclass:: QueueServer
+    :members:
+
+.. autoclass:: QueueWorker
+    :members:
+
+.. automodule:: pubsub
+
+.. autoclass:: PubSubBase
+    :members:
+
+.. autoclass:: Publisher
+    :members:
+
+.. autoclass:: Subscriber
+    :members:
+
+.. automodule:: topic
+
+.. autoclass:: TopicBase
+    :members:
+
+.. autoclass:: TopicPublisher
+    :members:
+
+.. autoclass:: TopicSubscriber
+    :members:
+
+.. automodule:: rpc
+
+.. autoclass:: RPCBase
+    :members:
+
+.. autoclass:: RPCServer
+    :members:
+
+.. autoclass:: RPCClient
+    :members:
 
 
 Indices and tables

@@ -32,6 +32,9 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
         <li><a href="#">cottontail 0.1a documentation</a> &raquo;</li> 
       </ul>
     </div>  
@@ -48,6 +51,128 @@
 <ul class="simple">
 </ul>
 </div>
+<span class="target" id="module-base"></span><span class="target" id="module-errors"></span><p>Cottontial Error classes and functions.</p>
+<dl class="class">
+<dt id="errors.CottontailBaseError">
+<em class="property">class </em><tt class="descclassname">errors.</tt><tt class="descname">CottontailBaseError</tt><a class="reference internal" href="_modules/errors.html#CottontailBaseError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#errors.CottontailBaseError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base exception class for Cottontail errors in Python.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="errors.CottontailError">
+<em class="property">class </em><tt class="descclassname">errors.</tt><tt class="descname">CottontailError</tt><big>(</big><em>message</em>, <em>code</em><big>)</big><a class="reference internal" href="_modules/errors.html#CottontailError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#errors.CottontailError" title="Permalink to this definition">¶</a></dt>
+<dd><p>A generic error for the Cottontail client</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>message (str): Name of the error message to pass
+code (int): Numeric code of the error to display</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="module-queue"></span><dl class="class">
+<dt id="queue.QueueBase">
+<em class="property">class </em><tt class="descclassname">queue.</tt><tt class="descname">QueueBase</tt><big>(</big><em>exchange_name=''</em>, <em>hostname='localhost'</em>, <em>port=5672</em>, <em>logger=&lt;logging.Logger object at 0x11068f350&gt;</em><big>)</big><a class="reference internal" href="_modules/queue.html#QueueBase"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#queue.QueueBase" title="Permalink to this definition">¶</a></dt>
+<dd><p>A service base class for implementing work queue messaging patterns using the RabbitMQ library.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="queue.QueueServer">
+<em class="property">class </em><tt class="descclassname">queue.</tt><tt class="descname">QueueServer</tt><big>(</big><em>exchange_name=''</em>, <em>hostname='localhost'</em>, <em>port=5672</em>, <em>logger=&lt;logging.Logger object at 0x11068f350&gt;</em><big>)</big><a class="reference internal" href="_modules/queue.html#QueueServer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#queue.QueueServer" title="Permalink to this definition">¶</a></dt>
+<dd><p>A server class for publishing messages to a queue.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="queue.QueueWorker">
+<em class="property">class </em><tt class="descclassname">queue.</tt><tt class="descname">QueueWorker</tt><big>(</big><em>exchange_name=''</em>, <em>hostname='localhost'</em>, <em>port=5672</em>, <em>logger=&lt;logging.Logger object at 0x11068f350&gt;</em><big>)</big><a class="reference internal" href="_modules/queue.html#QueueWorker"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#queue.QueueWorker" title="Permalink to this definition">¶</a></dt>
+<dd><p>A worker class for consuming messages in a queue.</p>
+<dl class="docutils">
+<dt>Overwritten methods:</dt>
+<dd>_create_channel: Alter prefetch_count</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="module-pubsub"></span><dl class="class">
+<dt id="pubsub.PubSubBase">
+<em class="property">class </em><tt class="descclassname">pubsub.</tt><tt class="descname">PubSubBase</tt><big>(</big><em>exchange_name=''</em>, <em>hostname='localhost'</em>, <em>port=5672</em>, <em>logger=&lt;logging.Logger object at 0x11068f350&gt;</em><big>)</big><a class="reference internal" href="_modules/pubsub.html#PubSubBase"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pubsub.PubSubBase" title="Permalink to this definition">¶</a></dt>
+<dd><p>A service base class for implementing pub/sub messaging patterns using the RabbitMQ library.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="pubsub.Publisher">
+<em class="property">class </em><tt class="descclassname">pubsub.</tt><tt class="descname">Publisher</tt><big>(</big><em>exchange_name=''</em>, <em>hostname='localhost'</em>, <em>port=5672</em>, <em>logger=&lt;logging.Logger object at 0x11068f350&gt;</em><big>)</big><a class="reference internal" href="_modules/pubsub.html#Publisher"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pubsub.Publisher" title="Permalink to this definition">¶</a></dt>
+<dd><p>A server class for publishing messages in a pub/sub pattern.</p>
+<dl class="docutils">
+<dt>Overwritten methods:</dt>
+<dd>_bind_to_queue: Not necessary for a queue publisher, only a subscriber</dd>
+</dl>
+</dd></dl>
+
+<dl class="class">
+<dt id="pubsub.Subscriber">
+<em class="property">class </em><tt class="descclassname">pubsub.</tt><tt class="descname">Subscriber</tt><big>(</big><em>exchange_name=''</em>, <em>hostname='localhost'</em>, <em>port=5672</em>, <em>logger=&lt;logging.Logger object at 0x11068f350&gt;</em><big>)</big><a class="reference internal" href="_modules/pubsub.html#Subscriber"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pubsub.Subscriber" title="Permalink to this definition">¶</a></dt>
+<dd><p>A worker class for consuming messages in a pub/sub pattern.</p>
+</dd></dl>
+
+<span class="target" id="module-topic"></span><dl class="class">
+<dt id="topic.TopicBase">
+<em class="property">class </em><tt class="descclassname">topic.</tt><tt class="descname">TopicBase</tt><big>(</big><em>exchange_name=''</em>, <em>hostname='localhost'</em>, <em>port=5672</em>, <em>logger=&lt;logging.Logger object at 0x11068f350&gt;</em><big>)</big><a class="reference internal" href="_modules/topic.html#TopicBase"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#topic.TopicBase" title="Permalink to this definition">¶</a></dt>
+<dd><p>A service base class for implementing work queue messaging patterns using the RabbitMQ library.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="topic.TopicPublisher">
+<em class="property">class </em><tt class="descclassname">topic.</tt><tt class="descname">TopicPublisher</tt><big>(</big><em>exchange_name=''</em>, <em>hostname='localhost'</em>, <em>port=5672</em>, <em>logger=&lt;logging.Logger object at 0x11068f350&gt;</em><big>)</big><a class="reference internal" href="_modules/topic.html#TopicPublisher"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#topic.TopicPublisher" title="Permalink to this definition">¶</a></dt>
+<dd><p>A server class for publishing messages in a pub/sub pattern.</p>
+<dl class="docutils">
+<dt>Overwritten methods:</dt>
+<dd>_bind_to_queue: Not necessary for a queue publisher, only a subscriber</dd>
+</dl>
+</dd></dl>
+
+<dl class="class">
+<dt id="topic.TopicSubscriber">
+<em class="property">class </em><tt class="descclassname">topic.</tt><tt class="descname">TopicSubscriber</tt><big>(</big><em>exchange_name=''</em>, <em>hostname='localhost'</em>, <em>port=5672</em>, <em>logger=&lt;logging.Logger object at 0x11068f350&gt;</em><big>)</big><a class="reference internal" href="_modules/topic.html#TopicSubscriber"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#topic.TopicSubscriber" title="Permalink to this definition">¶</a></dt>
+<dd><p>A worker class for consuming messages of a particular topic in a pub/sub pattern.</p>
+</dd></dl>
+
+<span class="target" id="module-rpc"></span><dl class="class">
+<dt id="rpc.RPCBase">
+<em class="property">class </em><tt class="descclassname">rpc.</tt><tt class="descname">RPCBase</tt><big>(</big><em>exchange_name=''</em>, <em>hostname='localhost'</em>, <em>port=5672</em>, <em>logger=&lt;logging.Logger object at 0x11068f350&gt;</em><big>)</big><a class="reference internal" href="_modules/rpc.html#RPCBase"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rpc.RPCBase" title="Permalink to this definition">¶</a></dt>
+<dd><p>A service base class for implementing RPC messaging patterns using the RabbitMQ library.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="rpc.RPCServer">
+<em class="property">class </em><tt class="descclassname">rpc.</tt><tt class="descname">RPCServer</tt><big>(</big><em>exchange_name=''</em>, <em>hostname='localhost'</em>, <em>port=5672</em>, <em>logger=&lt;logging.Logger object at 0x11068f350&gt;</em><big>)</big><a class="reference internal" href="_modules/rpc.html#RPCServer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rpc.RPCServer" title="Permalink to this definition">¶</a></dt>
+<dd><p>A server class for handling RPC requests.</p>
+<dl class="docutils">
+<dt>Overwritten methods:</dt>
+<dd>_create_channel: Alter prefetch_count
+_on_message:</dd>
+<dt>Additional methods:</dt>
+<dd>_process_message:
+_execute_call:</dd>
+</dl>
+</dd></dl>
+
+<dl class="class">
+<dt id="rpc.RPCClient">
+<em class="property">class </em><tt class="descclassname">rpc.</tt><tt class="descname">RPCClient</tt><big>(</big><em>**kw</em><big>)</big><a class="reference internal" href="_modules/rpc.html#RPCClient"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rpc.RPCClient" title="Permalink to this definition">¶</a></dt>
+<dd><p>A client class for submitting RPC requests.</p>
+<dl class="docutils">
+<dt>Overridden methods:</dt>
+<dd>__init__:
+_bind_to_queue:
+_on_message:
+_declare_exchange:</dd>
+<dt>Additional methods</dt>
+<dd>call:
+_compose_message</dd>
+<dt>Attributes:</dt>
+<dd>callback_queue (string): Name of the callback queue</dd>
+</dl>
+</dd></dl>
+
 </div>
 <div class="section" id="indices-and-tables">
 <h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
@@ -98,6 +223,9 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
         <li><a href="#">cottontail 0.1a documentation</a> &raquo;</li> 
       </ul>
     </div>
