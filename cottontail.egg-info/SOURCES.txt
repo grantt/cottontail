@@ -1,0 +1,14 @@
+setup.cfg
+setup.py
+cottontail/__init__.py
+cottontail/base.py
+cottontail/errors.py
+cottontail/pubsub.py
+cottontail/queue.py
+cottontail/rpc.py
+cottontail/topic.py
+cottontail/utils.py
+cottontail.egg-info/PKG-INFO
+cottontail.egg-info/SOURCES.txt
+cottontail.egg-info/dependency_links.txt
+cottontail.egg-info/top_level.txt
