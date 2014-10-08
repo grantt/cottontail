@@ -18,6 +18,9 @@ setup(
     author='Grant Toeppen',
     author_email='grant.toeppen@gmail.com',
     packages=find_packages(exclude=['*.examples', '*.examples.*']),
+    install_requires=[
+        'pika',
+    ],
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',
