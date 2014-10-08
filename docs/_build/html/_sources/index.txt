@@ -68,7 +68,6 @@ Contents:
 .. autoclass:: RPCClient
     :members:
 
-
 Indices and tables
 ==================
 
