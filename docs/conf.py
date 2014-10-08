@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
 # cottontail documentation build configuration file, created by
-# sphinx-quickstart on Wed Oct  8 09:45:55 2014.
+# sphinx-quickstart on Wed Oct  8 11:30:51 2014.
 #
 # This file is execfile()d with the current directory set to its
 # containing dir.
@@ -33,7 +33,7 @@ extensions = [
     'sphinx.ext.doctest',
     'sphinx.ext.intersphinx',
     'sphinx.ext.coverage',
-    'sphinx.ext.ifconfig',
+    'sphinx.ext.viewcode',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
