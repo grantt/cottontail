@@ -3,7 +3,7 @@
 
 # You can set these variables from the command line.
 SPHINXOPTS    =
-SPHINXBUILD   = /Users/grant/dev/virtualenvs/cottontail/bin/sphinx-build
+SPHINXBUILD   = ~/dev/virtualenvs/cottontail/bin/sphinx-build
 PAPER         =
 BUILDDIR      = _build
 

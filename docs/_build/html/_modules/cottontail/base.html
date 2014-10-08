@@ -6,38 +6,38 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>base &mdash; cottontail 0.1a documentation</title>
+    <title>cottontail.base &mdash; cottontail 0.1a documentation</title>
     
-    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
+        URL_ROOT:    '../../',
         VERSION:     '0.1a',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
       };
     </script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="cottontail 0.1a documentation" href="../index.html" />
-    <link rel="up" title="Module code" href="index.html" /> 
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="cottontail 0.1a documentation" href="../../index.html" />
+    <link rel="up" title="Module code" href="../index.html" /> 
   </head>
   <body>
     <div class="related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="../genindex.html" title="General Index"
+          <a href="../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="../py-modindex.html" title="Python Module Index"
+          <a href="../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="../index.html">cottontail 0.1a documentation</a> &raquo;</li>
-          <li><a href="index.html" accesskey="U">Module code</a> &raquo;</li> 
+        <li><a href="../../index.html">cottontail 0.1a documentation</a> &raquo;</li>
+          <li><a href="../index.html" accesskey="U">Module code</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -46,7 +46,7 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <h1>Source code for base</h1><div class="highlight"><pre>
+  <h1>Source code for cottontail.base</h1><div class="highlight"><pre>
 <span class="kn">import</span> <span class="nn">pika</span>
 <span class="kn">import</span> <span class="nn">errors</span>
 <span class="kn">import</span> <span class="nn">utils</span>
@@ -58,7 +58,7 @@
 <span class="n">EXCHANGE_TYPES</span> <span class="o">=</span> <span class="p">{</span><span class="n">EXCHANGE_DIRECT</span><span class="p">,</span> <span class="n">EXCHANGE_TOPIC</span><span class="p">,</span> <span class="n">EXCHANGE_FANOUT</span><span class="p">,</span> <span class="n">EXCHANGE_HEADERS</span><span class="p">}</span>
 
 
-<div class="viewcode-block" id="CottontailBase"><a class="viewcode-back" href="../index.html#base.CottontailBase">[docs]</a><span class="k">class</span> <span class="nc">CottontailBase</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="viewcode-block" id="CottontailBase"><a class="viewcode-back" href="../../cottontail.html#cottontail.base.CottontailBase">[docs]</a><span class="k">class</span> <span class="nc">CottontailBase</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A service base class for implementing messaging patterns using the RabbitMQ library.</span>
 <span class="sd">    Supported patterns include pub/sub, RPC, topic subscription, and work queues.</span>
@@ -138,7 +138,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">&quot;Setting up a new channel on the connection&quot;</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_connection</span><span class="o">.</span><span class="n">channel</span><span class="p">()</span>
 
-<div class="viewcode-block" id="CottontailBase.declare_queue"><a class="viewcode-back" href="../index.html#base.CottontailBase.declare_queue">[docs]</a>    <span class="k">def</span> <span class="nf">declare_queue</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">durable</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">exclusive</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+<div class="viewcode-block" id="CottontailBase.declare_queue"><a class="viewcode-back" href="../../cottontail.html#cottontail.base.CottontailBase.declare_queue">[docs]</a>    <span class="k">def</span> <span class="nf">declare_queue</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">durable</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">exclusive</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Args:</span>
 <span class="sd">            name (string): Name of the queue to declare</span>
@@ -162,7 +162,7 @@
 
         <span class="k">return</span> <span class="n">result</span><span class="o">.</span><span class="n">method</span><span class="o">.</span><span class="n">queue</span>
 </div>
-<div class="viewcode-block" id="CottontailBase.delete_queue"><a class="viewcode-back" href="../index.html#base.CottontailBase.delete_queue">[docs]</a>    <span class="k">def</span> <span class="nf">delete_queue</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+<div class="viewcode-block" id="CottontailBase.delete_queue"><a class="viewcode-back" href="../../cottontail.html#cottontail.base.CottontailBase.delete_queue">[docs]</a>    <span class="k">def</span> <span class="nf">delete_queue</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Args:</span>
 <span class="sd">            name (string): Name of the queue to delete</span>
@@ -196,7 +196,7 @@
         <span class="p">))</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_channel</span><span class="o">.</span><span class="n">queue_bind</span><span class="p">(</span><span class="n">exchange</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">exchange_name</span><span class="p">,</span> <span class="n">queue</span><span class="o">=</span><span class="n">queue</span><span class="p">,</span> <span class="n">routing_key</span><span class="o">=</span><span class="n">topic</span><span class="p">)</span>
 
-<div class="viewcode-block" id="CottontailBase.publish"><a class="viewcode-back" href="../index.html#base.CottontailBase.publish">[docs]</a>    <span class="k">def</span> <span class="nf">publish</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">topic</span><span class="p">,</span> <span class="n">content</span><span class="p">):</span>
+<div class="viewcode-block" id="CottontailBase.publish"><a class="viewcode-back" href="../../cottontail.html#cottontail.base.CottontailBase.publish">[docs]</a>    <span class="k">def</span> <span class="nf">publish</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">topic</span><span class="p">,</span> <span class="n">content</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Publish a message with a specified topic to the exchange</span>
 
@@ -223,7 +223,7 @@
             <span class="p">),</span>
         <span class="p">)</span>
 </div>
-<div class="viewcode-block" id="CottontailBase.subscribe"><a class="viewcode-back" href="../index.html#base.CottontailBase.subscribe">[docs]</a>    <span class="k">def</span> <span class="nf">subscribe</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">queue_name</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">topic</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">acknowledge</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">exclusive</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+<div class="viewcode-block" id="CottontailBase.subscribe"><a class="viewcode-back" href="../../cottontail.html#cottontail.base.CottontailBase.subscribe">[docs]</a>    <span class="k">def</span> <span class="nf">subscribe</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">queue_name</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">topic</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">acknowledge</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">exclusive</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Subscribe to the messages of a particular queue</span>
 
@@ -251,14 +251,14 @@
 
         <span class="k">return</span> <span class="n">queue</span>
 </div>
-<div class="viewcode-block" id="CottontailBase.listen"><a class="viewcode-back" href="../index.html#base.CottontailBase.listen">[docs]</a>    <span class="k">def</span> <span class="nf">listen</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="CottontailBase.listen"><a class="viewcode-back" href="../../cottontail.html#cottontail.base.CottontailBase.listen">[docs]</a>    <span class="k">def</span> <span class="nf">listen</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Listen continuously on the subscriber socket for incoming messages.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">&#39;Listening for messages...&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_channel</span><span class="o">.</span><span class="n">start_consuming</span><span class="p">()</span>
 </div>
-<div class="viewcode-block" id="CottontailBase.acknowledge"><a class="viewcode-back" href="../index.html#base.CottontailBase.acknowledge">[docs]</a>    <span class="k">def</span> <span class="nf">acknowledge</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message_receipt</span><span class="p">):</span>
+<div class="viewcode-block" id="CottontailBase.acknowledge"><a class="viewcode-back" href="../../cottontail.html#cottontail.base.CottontailBase.acknowledge">[docs]</a>    <span class="k">def</span> <span class="nf">acknowledge</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message_receipt</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Acknowledge the message delivery from RabbitMQ by sending a Basic.Ack RPC method for the delivery tag.</span>
 
@@ -269,7 +269,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">&#39;Acknowledging message: {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">message_receipt</span><span class="p">))</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_channel</span><span class="o">.</span><span class="n">basic_ack</span><span class="p">(</span><span class="n">message_receipt</span><span class="p">)</span>
 </div>
-<div class="viewcode-block" id="CottontailBase.close_connection"><a class="viewcode-back" href="../index.html#base.CottontailBase.close_connection">[docs]</a>    <span class="k">def</span> <span class="nf">close_connection</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="CottontailBase.close_connection"><a class="viewcode-back" href="../../cottontail.html#cottontail.base.CottontailBase.close_connection">[docs]</a>    <span class="k">def</span> <span class="nf">close_connection</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Closes the connection to RabbitMQ</span>
 
@@ -340,7 +340,7 @@
         <div class="sphinxsidebarwrapper">
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
-    <form class="search" action="../search.html" method="get">
+    <form class="search" action="../../search.html" method="get">
       <input type="text" name="q" />
       <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
@@ -359,13 +359,13 @@
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="../genindex.html" title="General Index"
+          <a href="../../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="../py-modindex.html" title="Python Module Index"
+          <a href="../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="../index.html">cottontail 0.1a documentation</a> &raquo;</li>
-          <li><a href="index.html" >Module code</a> &raquo;</li> 
+        <li><a href="../../index.html">cottontail 0.1a documentation</a> &raquo;</li>
+          <li><a href="../index.html" >Module code</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">

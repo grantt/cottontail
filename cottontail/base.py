@@ -262,7 +262,6 @@ class CottontailBase(object):
         self.logger.info("Handling message {}:{}".format(basic_deliver.routing_key, body))
         self.acknowledge(basic_deliver.delivery_tag)
 
-
     # Future Callbacks, dependent on non-blocking Connection Adapters
     # http://pika.readthedocs.org/en/latest/modules/adapters/index.html
 
