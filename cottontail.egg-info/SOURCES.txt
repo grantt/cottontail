@@ -11,4 +11,5 @@ cottontail/utils.py
 cottontail.egg-info/PKG-INFO
 cottontail.egg-info/SOURCES.txt
 cottontail.egg-info/dependency_links.txt
+cottontail.egg-info/requires.txt
 cottontail.egg-info/top_level.txt
