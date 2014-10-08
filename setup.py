@@ -19,7 +19,7 @@ setup(
     author_email='grant.toeppen@gmail.com',
     packages=find_packages(exclude=['*.examples', '*.examples.*']),
     install_requires=[
-        'pika',
+        'pika==0.9.14',
     ],
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
