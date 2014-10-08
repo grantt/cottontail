@@ -1,6 +1,6 @@
 import os
 
-from setuptools import setup
+from setuptools import setup, find_packages
 
 
 def read(*paths):
@@ -10,15 +10,14 @@ def read(*paths):
 
 setup(
     name='cottontail',
-    version='0.0.1',
+    version='0.1a',
     description='RabbitMQ PubSub Client and Message Broker.',
     long_description=(read('README.md')),
     url='http://github.com/grantt/cottontail/',
     license='MIT',
     author='Grant Toeppen',
     author_email='grant.toeppen@gmail.com',
-    py_modules=['pem'],
-    include_package_data=True,
+    packages=find_packages(exclude=['*.examples', '*.examples.*']),
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',
