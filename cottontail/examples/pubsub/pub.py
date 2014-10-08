@@ -2,14 +2,10 @@ import cottontail
 
 
 def run():
-    test_cli = cottontail.CottontailMessenger('test')
+    test_cli = cottontail.Publisher('pubsub_test')
 
     for n in xrange(100):
-        if n % 2:
-            topic = 'test'
-        else:
-            topic = 'other'
-        test_cli.publish(topic, str(n))
+        test_cli.publish('', str(n))
 
 if __name__ == '__main__':
     run()

@@ -1,17 +1,11 @@
-import sys
 import cottontail
 
 
-def run(topic):
-    test_cli = cottontail.CottontailMessenger('test')
+def run():
+    test_cli = cottontail.Subscriber('pubsub_test')
 
-    test_cli.subscribe(topic)
+    test_cli.subscribe()
     test_cli.listen()
 
 if __name__ == '__main__':
-    if len(sys.argv) == 2:
-        topic = sys.argv[1]
-    else:
-        topic = ''
-
-    run(topic)
+    run()

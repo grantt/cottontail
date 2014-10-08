@@ -3,9 +3,9 @@ import cottontail
 
 
 def run(topic):
-    test_cli = cottontail.CottontailMessenger('test_topic', exchange_type=cottontail.EXCHANGE_TOPIC)
+    test_cli = cottontail.TopicSubscriber('topic_test')
 
-    test_cli.subscribe(topic)
+    test_cli.subscribe(topic=topic)
     test_cli.listen()
 
 if __name__ == '__main__':

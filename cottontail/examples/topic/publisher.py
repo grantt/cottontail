@@ -2,7 +2,7 @@ import cottontail
 
 
 def run():
-    test_cli = cottontail.CottontailMessenger('test_topic', exchange_type=cottontail.EXCHANGE_TOPIC)
+    test_cli = cottontail.TopicPublisher('topic_test')
 
     for n in xrange(100):
         if n % 2:
