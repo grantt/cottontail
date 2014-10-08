@@ -18,8 +18,7 @@ class CottontailBase(object):
         exchange_name (str, optional): Name of the message exchange to create, defaults to ''.
         hostname (str, optional): Hostname for this pub/sub client, defaults to 'localhost'.
         port (int, optional): Numeric port for this pub/sub client, defaults to '5672'.
-        exchange_type (str, optional): Exchange type to create ('headers', 'topic', 'direct', 'fanout'),
-            defaults to 'direct'.
+        exchange_type (str, optional): Exchange type to create ('headers', 'topic', 'direct', 'fanout'), defaults to 'direct'.
         confirm_delivery (bool, optional): Whether to request 'ack' messages from consumers, default is True.
         logger (module, optional): The logging module to use with this Client instance, default is 'utils.logger'.
 
@@ -182,15 +181,13 @@ class CottontailBase(object):
         Args:
             queue_name (basestring, optional): The name of the queue to subscribe to, defaults to None.
             topic (basestring, optional): The topic or key to filter messages by, defaults to None.
-            acknowledge (bool, optional): Whether to send an 'ack' message back to the
-                producer upon message receipt, default is True.
+            acknowledge (bool, optional): Whether to send an 'ack' message back to the producer upon message receipt, default is True.
 
         Returns:
             bool: True if successful
 
         Raises:
-            CottontailError: If a subscription is issued to the default ('') exchange.
-                See http://docs.oasis-open.org/amqp/core/v1.0/amqp-core-complete-v1.0.pdf for details.
+            CottontailError: If a subscription is issued to the default ('') exchange. See http://docs.oasis-open.org/amqp/core/v1.0/amqp-core-complete-v1.0.pdf for details.
         """
 
         # if not self.exchange_name:
@@ -258,10 +255,8 @@ class CottontailBase(object):
 
         Args:
             channel (pika.channel.Channel): The Channel object
-            basic_deliver (pika.Spec.Basic.Deliver): The basic_deliver object, carrying
-                the exchange, routing_key, delivery tag, and a redelivered flag
-            properties (pika.Spec.BasicProperties): An instance of BasicProperties with
-                the message properties
+            basic_deliver (pika.Spec.Basic.Deliver): The basic_deliver object, carrying the exchange, routing_key, delivery tag, and a redelivered flag
+            properties (pika.Spec.BasicProperties): An instance of BasicProperties with the message properties
             body (basestring): The message that was delivered.
         """
         self.logger.info("Handling message {}:{}".format(basic_deliver.routing_key, body))

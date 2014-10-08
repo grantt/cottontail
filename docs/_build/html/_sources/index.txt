@@ -13,7 +13,7 @@ Contents:
 
 .. automodule:: base
 
-.. autoclass:: SomeClassName
+.. autoclass:: CottontailBase
     :members:
 
 .. automodule:: errors

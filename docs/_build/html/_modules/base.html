@@ -67,8 +67,7 @@
 <span class="sd">        exchange_name (str, optional): Name of the message exchange to create, defaults to &#39;&#39;.</span>
 <span class="sd">        hostname (str, optional): Hostname for this pub/sub client, defaults to &#39;localhost&#39;.</span>
 <span class="sd">        port (int, optional): Numeric port for this pub/sub client, defaults to &#39;5672&#39;.</span>
-<span class="sd">        exchange_type (str, optional): Exchange type to create (&#39;headers&#39;, &#39;topic&#39;, &#39;direct&#39;, &#39;fanout&#39;),</span>
-<span class="sd">            defaults to &#39;direct&#39;.</span>
+<span class="sd">        exchange_type (str, optional): Exchange type to create (&#39;headers&#39;, &#39;topic&#39;, &#39;direct&#39;, &#39;fanout&#39;), defaults to &#39;direct&#39;.</span>
 <span class="sd">        confirm_delivery (bool, optional): Whether to request &#39;ack&#39; messages from consumers, default is True.</span>
 <span class="sd">        logger (module, optional): The logging module to use with this Client instance, default is &#39;utils.logger&#39;.</span>
 
@@ -231,15 +230,13 @@
 <span class="sd">        Args:</span>
 <span class="sd">            queue_name (basestring, optional): The name of the queue to subscribe to, defaults to None.</span>
 <span class="sd">            topic (basestring, optional): The topic or key to filter messages by, defaults to None.</span>
-<span class="sd">            acknowledge (bool, optional): Whether to send an &#39;ack&#39; message back to the</span>
-<span class="sd">                producer upon message receipt, default is True.</span>
+<span class="sd">            acknowledge (bool, optional): Whether to send an &#39;ack&#39; message back to the producer upon message receipt, default is True.</span>
 
 <span class="sd">        Returns:</span>
 <span class="sd">            bool: True if successful</span>
 
 <span class="sd">        Raises:</span>
-<span class="sd">            CottontailError: If a subscription is issued to the default (&#39;&#39;) exchange.</span>
-<span class="sd">                See http://docs.oasis-open.org/amqp/core/v1.0/amqp-core-complete-v1.0.pdf for details.</span>
+<span class="sd">            CottontailError: If a subscription is issued to the default (&#39;&#39;) exchange. See http://docs.oasis-open.org/amqp/core/v1.0/amqp-core-complete-v1.0.pdf for details.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
         <span class="c"># if not self.exchange_name:</span>
@@ -307,10 +304,8 @@
 
 <span class="sd">        Args:</span>
 <span class="sd">            channel (pika.channel.Channel): The Channel object</span>
-<span class="sd">            basic_deliver (pika.Spec.Basic.Deliver): The basic_deliver object, carrying</span>
-<span class="sd">                the exchange, routing_key, delivery tag, and a redelivered flag</span>
-<span class="sd">            properties (pika.Spec.BasicProperties): An instance of BasicProperties with</span>
-<span class="sd">                the message properties</span>
+<span class="sd">            basic_deliver (pika.Spec.Basic.Deliver): The basic_deliver object, carrying the exchange, routing_key, delivery tag, and a redelivered flag</span>
+<span class="sd">            properties (pika.Spec.BasicProperties): An instance of BasicProperties with the message properties</span>
 <span class="sd">            body (basestring): The message that was delivered.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">&quot;Handling message {}:{}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">basic_deliver</span><span class="o">.</span><span class="n">routing_key</span><span class="p">,</span> <span class="n">body</span><span class="p">))</span>
