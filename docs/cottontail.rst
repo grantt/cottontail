@@ -59,15 +59,6 @@ cottontail.topic module
     :undoc-members:
     :show-inheritance:
 
-cottontail.utils module
------------------------
-
-.. automodule:: cottontail.utils
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-
 Module contents
 ---------------
 
